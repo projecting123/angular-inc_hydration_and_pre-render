@@ -1,0 +1,10 @@
+<div>
+   @for (item of data(); track $index) {
+    <p>Product id: {{item.id}}</p>
+    <p>Product title: {{item.title}}</p>
+    <p>Product description: {{item.description}}</p>
+   }
+   @empty {
+      <p>Not item</p>
+   }
+</div>

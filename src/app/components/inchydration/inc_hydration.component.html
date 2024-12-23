@@ -1,0 +1,23 @@
+@defer (hydrate on hover) {
+<div inc_hydration_second>
+    <p style="color: white;">Long Box (Trigger: Hover)</p>
+</div>
+}
+
+
+@defer (hydrate on viewport) {
+<p inc_hydration_first>Second defer block (Trigger: Viewport)</p>
+<button type="button" (click)="hs.onclick()">Click</button>
+}
+
+<!-- Hydrate (downloaded, parsed and runs) the incremental_hydration component and its dependencies i.e services, directives or pipes etc on viewport triggers, if loadable;
+ 
+Loadable condition:
+
+1. Services, directives or pipes should not be loaded before. Because if those are already loaded then there is no make sense to load them again. 
+2. Services, directives or pipes must be used inside the component or with the component.
+
+-->
+@defer (hydrate on viewport) {
+    <app-inchydrationchild></app-inchydrationchild>
+}
